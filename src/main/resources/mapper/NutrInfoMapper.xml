@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlx.ict4d.demo.Mapper.NutrInfoMapper">
+    <insert id="addNutrInfo">
+        insert into NutrInfo (author_id,author_name,content,title,likes,comments,create_time)
+        values(#{nutrInfo.authorId},#{nutrInfo.authorName},#{nutrInfo.content},#{nutrInfo.title},#{nutrInfo.likes},#{nutrInfo.comments}
+        ,#{nutrInfo.createTime})
+    </insert>
+
+    <select id="getAllNutrInfos" resultType="com.zlx.ict4d.demo.bean.NutrInfo">
+        select * from NutrInfo
+    </select>
+    <select id="getNutrInfoById" resultType="com.zlx.ict4d.demo.bean.NutrInfo">
+        select * from NutrInfo where id =#{id}
+    </select>
+</mapper>
