@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlx.ict4d.demo.Mapper.ProductCommentMapper">
+
+    <insert id="addProductComment">
+
+        insert into ProductComment(user_id,user_name,score,product_id,comment,create_time) values(
+#{productComment.userId},#{productComment.userName},#{productComment.score},#{productComment.productId},
+#{productComment.comment},#{productComment.createTime}
+       )
+    </insert>
+    <select id="getAllComments" resultType="com.zlx.ict4d.demo.bean.ProductComment">
+
+        select * from ProductComment
+    </select>
+    <select id="getProductCommentById" resultType="com.zlx.ict4d.demo.bean.ProductComment">
+
+select * from ProductComment where product_id=#{productCommentId}
+    </select>
+</mapper>
