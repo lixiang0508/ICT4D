@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no，minimum-scale=1.0">
+	<!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9;IE=EmulateIE10; IE=EmulateIE11">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="Author" content="Calvin,stella-ning">
+	<title>光头佬联圣总部唯一指定官网</title>
+    <link rel="shortcut icon" href="images/PClogo.png">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" media="screen and (min-width:980px)" href="css/pc.css"><!--大于980px的时候-->
+	<link rel="stylesheet" media="screen and (max-width:780px)" href="css/mobile.css"><!--手机的时候-->
+	<script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/rem.js"></script>
+	<script src="js/idangerous.swiper2.7.6.min.js"></script>
+	<script src="js/index.js"></script>
+    <script src="js/shopCar.js"></script>
+    <!-- <!–[if lt IE 9]>
+        <script src=”http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js”></script>
+    <![endif]–> -->
+</head>
+
+<body>
+
+    <!-- 头部 -->
+    <header class="wrap">
+        <div class="head container clearfix">
+            <div class="logo fl">
+                <a href=""><img src="images/logo.png" alt="" ></a>
+            </div>
+            <div class="openNav" id="openNav">
+                <img src="images/navIcon.png" alt="">
+            </div>
+            <div class="nav-wrap fr">
+                <div class="login">
+                    <a href="login.html">登录</a>
+                    <a href="register.html">注册</a>
+                </div>
+                <ul class="headNav" id="nav">
+                    <li class="hover"><a href="index.html">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+                    <li><a href="vipCenter.html">会员中心</a></li>
+                    <li><a href="helpCenter.html">帮助中心</a></li>
+                    <li><a href="http://guangtoulao.gtljm.com/">官方网站</a></li>
+                    <li><a href="http://www.gtljm.com">加盟网站</a></li>
+                </ul>
+            </div>
+        </header>
+
+  <div id="product-list"></div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    const productList = document.getElementById('product-list');
+
+    axios.get('/api/products')
+      .then(response => {
+        const products = response.data;
+
+        products.forEach(product => {
+          const productElement = document.createElement('div');
+
+          const nameElement = document.createElement('h2');
+          nameElement.textContent = product.name;
+          productElement.appendChild(nameElement);
+
+          const priceElement = document.createElement('p');
+          priceElement.textContent = `价格：¥${product.price}`;
+          productElement.appendChild(priceElement);
+
+          const descriptionElement = document.createElement('p');
+          descriptionElement.textContent = product.description;
+          productElement.appendChild(descriptionElement);
+
+          const imageElement = document.createElement('img');
+          imageElement.src = product.imageUrl;
+          productElement.appendChild(imageElement);
+
+          productList.appendChild(productElement);
+        });
+      })
+      .catch(error => {
+        console.error(error);
+        alert('加载商品失败！');
+      });
+  </script>
+</body>
+</html>
