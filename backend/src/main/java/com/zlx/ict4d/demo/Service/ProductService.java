@@ -39,10 +39,10 @@ public class ProductService {
         return productMapper.selectProductById(productId);
     }
     //add a product
-    public void addProduct(Integer userId, Integer category_id, String name,
-                           Integer quantity, double price, String address){
+    public void addProduct(Integer userId, Integer category_id, String name, String userName,
+                           Integer quantity, double price, String address,String information){
 
-        productMapper.addProduct(userId, category_id,name,quantity,price,address);
+        productMapper.addProduct(userId, category_id,name,userName,quantity,price,address,information);
     }
 
 
@@ -50,4 +50,3 @@ public class ProductService {
 
 
 }
-
