@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zlx.ict4d.demo.Mapper.ProductMapper">
-    <insert id="addProduct">
-        insert into Product(`user_id`,`category_id`,`name`,`quantity`,`price`,`address`) values(#{userId},#{categoryId},#{name},#{quantity},
-                                                                                    #{price},#{address})
+      <insert id="addProduct">
+        insert into Product(`user_id`,`category_id`,`name`,`quantity`,`price`,`address`,`information`,`user_name`) values(#{userId},#{categoryId},#{name},#{quantity},
+                                                                                    #{price},#{address},#{information},#{userName})
     </insert>
 
 
