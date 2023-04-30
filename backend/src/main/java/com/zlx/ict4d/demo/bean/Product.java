@@ -16,6 +16,8 @@ public class Product {
     private Double price;
 
     private String address; // where to get
+    private String information;
+     private String userName;
 
 
 }
