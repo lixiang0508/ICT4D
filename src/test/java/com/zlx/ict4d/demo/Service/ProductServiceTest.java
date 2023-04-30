@@ -45,6 +45,6 @@ class ProductServiceTest {
     @Test
     void addProduct() {
 
-        productService.addProduct(19,2,"ntfp3",4,15.6,"somewhere");
+        productService.addProduct(19,2,"ntfp3","kk",4,15.6,"somewhere","excellent");
     }
 }

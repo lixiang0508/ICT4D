@@ -14,8 +14,10 @@ public class Product {
     private String name;
     private Integer quantity;
     private Double price;
-
+    private String userName;
     private String address; // where to get
+
+    private String information;
 
 
 }

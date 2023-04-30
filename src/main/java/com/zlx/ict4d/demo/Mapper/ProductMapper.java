@@ -21,8 +21,8 @@ public interface ProductMapper {
 
     List<Product> searchProductByName(@Param("name") String name);
 
-    void addProduct(@Param("userId") Integer userId, @Param("categoryId") Integer category_id, @Param("name") String name,
-                    @Param("quantity") Integer quantity, @Param("price") Double price, @Param("address") String address);
+    void addProduct(@Param("userId") Integer userId, @Param("categoryId") Integer category_id, @Param("userName") String userName, @Param("name") String name,
+                    @Param("quantity") Integer quantity, @Param("price") Double price, @Param("address") String address,@Param("information") String information);
 
 
 

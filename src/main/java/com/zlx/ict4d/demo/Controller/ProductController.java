@@ -56,9 +56,11 @@ ProductService productService;
         log.info("price",price);
         //String address =(String) product.getAttribute("address");
         String address = product.getAddress();
+        String information = product.getInformation();
+        String userName = product.getUserName();
         log.info("address",address);
         log.info("userId",userId,"categoryId",categoryId,"name",name,"quantity",quantity,"price",price,"address",address);
-        productService.addProduct(userId,categoryId,name,quantity,price,address);
+        productService.addProduct(userId,categoryId,name,userName,quantity,price,address,information);
         return JsonData.buildSuccess(null,"add product success");
     }
 
