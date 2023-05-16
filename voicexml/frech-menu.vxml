@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8">
+ <vxml version="2.0" xmlns="http://www.w3.org/2001/vxml">
+    <property name="inputmodes" value="dtmf"/> <!-- set input to DTMF-->
+    <catch event="product_selected">
+        <prompt>
+        .
+        </prompt>
+        <assign name="product" expr="_message"/>
+        <assign name="units" expr="'sachets'"/>
+        <assign name="categoryId" expr="dtmf"  />  <goto next="#details"/>
+    </catch>
+
+    <!-- Let the user input his or her username-->
+    <field name="form_userName">
+    <prompt>
+        <!--Please say your name -->
+        <!-- Veuillez donner votre nom -->
+        <audio src="wavs/FR_SayYourName.wav"/>
+    </prompt>
+    <filled>
+        <assign name="user" expr="form_userName"/>
+    </filled>
+    </field>
+
+    <!-- Let the user input his or her address-->
+    <field name="form_address">
+        <prompt>
+            <!-- Please say your address-->
+            <!-- Veuillez indiquer votre adresse -->
+            <audio src="wavs/FR_SayYourAddress.wav"/>
+        </prompt>
+        <filled>
+            <assign name="address" expr="address"/>
+        </filled>
+        </field>
+
+
+    <!-- ED.1. main menu-->
+    <!--<menu id="menu_product" scope="dialog">-->
+    <!--<prompt>-->
+    <!--<break time="1000"/>-->
+    <!-- Please add information for your product -->
+    <!-- Veuillez ajouter vos informations produit -->
+    <!--<audio src="wavs/.wav"/>-->
+    <!--</prompt>-->
+
+
+    <!-- ED.2. -->
+    <field name ="product_information">
+    <prompt>
+    <break time="1000"/>
+    <!-- Please add information for your product -->
+    <!-- Veuillez ajouter des informations pour votre produit  -->
+    <audio src="wavs/FR_AddProductInfo.wav"/>
+    <grammar type="text/plain" mode="voice" />
+    <filled>
+    <var name="information" expr="product_information"/>
+    </filled>
+    </prompt>
+
+    </field>
+
+    <!-- main menu-->
+    <menu id="menu_product" scope="dialog">
+
+
+
+    <!-- product list-->
+    <prompt>
+    <enumerate>
+    <break time="1000"/>
+    Pour <value expr="_prompt"/>, Press <value expr="_dtmf"/>
+    </enumerate>
+    </prompt>
+
+    <!-- comment -->
+    <choice event="product_selected" dtmf="1" message="Beurre de karité">Beurre de karité</choice>
+    <choice event="product_selected" dtmf="2" message="Miel">Miel</choice>
+    <choice event="product_selected" dtmf="3" message="Fruit du baobab">Fruit du baobab</choice>
+    <choice event="product_selected" dtmf="4" message="Gomme arabe">Gomme arabe</choice>
+    <choice event="product_selected" dtmf="5" message="Tamarin">Tamarin</choice>
+    <choice event="product_selected" dtmf="6" message="Kinkeliba">Kinkeliba</choice>
+    <choice event="product_selected" dtmf="7" message="Néré">Néré</choice>
+
+
+    </menu>
+
+    <form id="details">
+        <field name="form_quantity" type="number">
+           <prompt>
+            Combien <value expr="units"/> de <value expr="product"/>?
+            <!-- Enter the quantity and press hash -->
+            <!-- Entrez la quantité et appuyez sur Hash -->
+            <audio src="wavs/FR_EnterQuantity.wav"/>
+           </prompt>
+         <filled>
+       <assign name="quantity" expr="form_quantity"/>
+        </filled>
+
+        </field>
+
+        <field name="form_price" type="number">
+           <prompt>
+            <!-- How much do you want to sell -->
+            <!-- Combien voulez - vous vendre vos produits? Entrez le prix et appuyez sur Hash-->
+            <audio src="wavs/FR_EnterPrice.wav"/>
+
+       </prompt>
+       <filled>
+      <assign name="price" expr="form_price"/>
+        </filled>
+        </field>
+
+   <field name="form_duration" type="number">
+           <prompt>
+            <!-- How many days do you want you add to be online? Enter number of days and press hash-->
+            <!-- Combien de jours souhaitez - vous ajouter pour être en ligne? Entrez le nombre de jours et appuyez sur Hash -->
+            <audio src="wavs/FR_EnterDays.wav"/>
+
+       </prompt>
+       <filled>
+      <assign name="duration" expr="form_duration"/>
+        </filled>
+        </field>
+
+  <!-- "filled" event for form -->
+        <filled>
+    <goto next="#confirm"/>
+        </filled>
+
+     </form>
+
+     <menu id="confirm" scope="dialog" dtmf="true">
+        <prompt>
+            <!-- You have created an add for Vous avez créé une addition pour -->
+            <audio src="wavs/FR_CreatedAdd.wav"/> <value expr="quantity"/> <value expr="units"/> pour <value expr="product"/> pour <value expr="price"/> .
+            Il sera en ligne <value expr="duration"/> jours
+        <break time="1000"/>
+        <!-- Pour confirmer, appuyez sur 1 -->
+        <audio src="wavs/FR_ToConfirm.wav"/>
+        <break time="1000"/>
+        <!-- To re-enter your product, press 2 -->
+        <!-- Pour saisir à nouveau votre produit, appuyez sur 2 -->
+        <audio src="wavs/FR_ReenterPro.wav"/>
+        </prompt>
+
+        <!-- listed choices are enumerated in order, 1 for save, 2 for menu_product-->
+        <choice next="#save"></choice> <!--go to "save" form-->
+        <choice next="#menu_product"></choice> <!--back to main form-->
+        </menu>
+
+        <!-- call backend with data-->
+        <form id="save">
+        <block>
+        <!-- to be done-->
+        <data name="psave" src="" namelist="user product quantity price duration" method="get"/>
+        <goto next="#last"/>
+        </block>
+        </form>
+
+        <!-- finish form-->
+        <menu id="last" scope="dialog" dtmf="true">
+        <prompt>
+            <!-- Your add has been published on the web-->
+            <!-- Votre ajout a été publié sur le Web-->
+            <audio src="wavs/FR_YourAddPub.wav"/>
+        <break time="1000"/>
+            <!-- To enter another addition, press 1-->
+            <!-- Pour entrer un autre ajout, appuyez sur 1-->
+            <audio src="wavs/FR_AnotherAddition.wav"/>
+        <break time="1000"/>
+            <!-- To end, press 2-->
+            <!-- Pour terminer, appuyez sur 2-->
+            <audio src="wavs/FR_ToEnd.wav"/>
+        </prompt>
+        <choice next="#menu_product"></choice>
+        <choice event="end"></choice>
+        </menu>
+
+
+
+
+ </vxml>

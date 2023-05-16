@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <vxml version="2.0" xmlns="http://www.w3.org/2001/vxml" application="root.vxml">
+   <!-- <property name="inputmodes" value="dtmf"/> --> <!-- set input to DTMF-->
+   <!-- main menu -->
+   <menu>
+       <property name="inputmodes" value="dtmf"/>
+       <prompt>
+           Dear friends, Welcome to ForFemme!
+           <break time="500"/>
+           For English service, please press 1.
+           <break time="500"/>
+           <audio src="wavs/French-welcome.wav"/> <!-- For French service, please press 2. -->
+           <break time="500"/>
+           To end the call, Please press the asterisk key.
+           <audio src="wavs/French-end_call.wav"/>
+       </prompt>
+       <choice dtmf="1" next="english-menu.vxml"></choice>
+       <choice dtmf="2" next="frech-menu.vxml"></choice>
+       <choice dtmf="*" event="end"></choice>
+
+   </menu>
+
+    </vxml>
