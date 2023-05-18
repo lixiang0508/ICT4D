@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no，minimum-scale=1.0">
+	<!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9;IE=EmulateIE10; IE=EmulateIE11">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="Author" content="Calvin,stella-ning">
+	<title>NTFP‘s Store——ForeFemme</title>
+    <link rel="shortcut icon" href="images/cake01.png">
+	<link rel="stylesheet" href="css/normalize.css">
+	<!-- <link rel="stylesheet" href="/Users/jinling/Downloads/shop/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="css/idangerous.swiper.css"> -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" media="screen and (min-width:980px)" href="css/pc.css"><!--大于980px的时候-->
+	<link rel="stylesheet" media="screen and (max-width:780px)" href="css/mobile.css"><!--手机的时候-->
+	<!-- <script src="/Users/jinling/Downloads/shop/js/jquery-2.1.1.min.js"></script>
+    <script src="/Users/jinling/Downloads/shop/js/bootstrap.min.js"></script> -->
+	<script src="js/rem.js"></script>
+	<script src="js/idangerous.swiper2.7.6.min.js"></script>
+	<!-- <script src="js/index.js"></script>
+    <script src="js/shopCar.js"></script> -->
+    <!-- <script src="js/formValid.js"></script>
+    <script src="js/form.js"></script> -->
+    <!-- <script src="http://cdn.suoluomei.com/common/js2.0/axios/axios.min.js"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- <!–[if lt IE 9]>
+        <script src=”http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js”></script>
+    <![endif]–> -->
+</head>
+
+<body>
+
+    <!-- 头部 -->
+    <header class="wrap">
+        <div class="head container clearfix">
+            <!-- <div class="logo fl">
+                <a href=""><img src="images/logo.png" width="200px" height="200px"></a >
+            </div> -->
+                <a href=""><img src="images/logo.png" width="200px" height="200px"></a >
+            
+            <div class="openNav" id="openNav">
+                <img src="images/navIcon.png" alt="">
+            </div>
+            <div class="nav-wrap fr">
+                <div class="login">
+                    <a href="login.html ">Login</a >
+                    <a href="register.html">Register</a >
+                </div>
+                <ul class="headNav" id="nav">
+                    <li class="hover"><a href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;Main Page</a ></li>
+                  
+                    <li><a href="update.html">Upload information</a ></li>
+                    <li><a href="share1.html">Information Page</a ></li>
+                </ul>
+            </div>
+        
+                
+        </div>
+
+
+    </header>
+    <section class="form-box">
+        <form class="form-horizontal" role="form" action="" id="FormDate">
+            <div class="top-tips">
+                <div class="title">Account Register</div>
+                <p class="tips">After you create an account you could buy the products</p >
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-3 control-label">Username：</label>
+                <div class="col-md-5 col-xs-9">
+                    <input type="text" id="username"  class="form-control required ">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-3 control-label">Verification Code：</label>
+                <div class="col-md-2 col-xs-5" style="padding-right:10px;">
+                    <input type="text" class="form-control required " data-valid="isNonEmpty" date-tip = "请输入验证码" data-error="请输入您的验证码">
+                </div>
+                <div class="col-md-2 col-xs-4 yzm">
+                    <img src="images/yanzheng.png" alt="" height="34">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-3 control-label">Password：</label>
+                <div class="col-md-5 col-xs-9">
+                    <input type="password" id="password" name="password" id="pwd"  class="form-control required " value=""  data-valid="isNonEmpty||isPassword" date-tip = "请输入您的密码||密码必须为6-16位字符" data-error="请输入您的密码||密码必须为6-16位字符">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-3 control-label">Check Password：</label>
+                <div class="col-md-5 col-xs-9">
+                    <input type="password"  id="checkpsw" name="confirmPwd" id="confirmPwd" class="form-control required " value=""  data-valid="isNonEmpty||isEqualto" data-equalto="[name=pwd]" date-tip = "请输入您的密码||两次密码必须一致" data-error="请输入您的密码||两次密码必须一致">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 col-xs-3 control-label"></label>
+                <div class="col-md-5 col-xs-9">
+                    <label for="hoby" class="check-wrap">
+                        <span class="checkbox-inner-wrap">
+                            <input type="checkbox" id="hoby">
+                            <span class="checkbox-inner"></span>
+                        </span>
+                        <span class="text">I already Read It.<a href="">《Context of Foremme》</a ></span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="button">
+                    <button type="button" onclick="register()">Register</button>
+                </div>
+
+            </div>
+        </form>
+
+    </section>
+
+    <!-- 底部 -->
+    <script>
+		// 注册表单提交事件\
+        function register() {
+			// 获取用户名和密码
+			const username = document.getElementById("username").value;
+			const password = document.getElementById("password").value;
+
+			// 发送注册请求
+			axios.post("http://localhost:9090/auth/register", {
+				userName: username,
+				password: password
+			}).then(function(response) {
+				alert("Success！");
+                window.location.href = 'login.html';
+			}).catch(function(error) {
+				alert("Failed：" + error.response.data.message);
+			});
+      
+    }
+	</script>
+</body>
+</html>
