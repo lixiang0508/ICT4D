@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no，minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9;IE=EmulateIE10; IE=EmulateIE11">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta name="Author" content="Calvin,stella-ning">
+		<meta http-equiv="Content-Language" content="en">
+		<title>Upload-Page</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+				<script type="text/javascript">
+					$(function() {
+					  $('input[type=file]').attr('title', 'Select file');
+					});
+				</script>
+		<link rel="shortcut icon" href="images/PClogo.png">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/public.css">
+		<link rel="stylesheet" href="js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+		<link rel="stylesheet" media="screen and (min-width:980px)" href="css/pc.css">
+		<!--大于980px的时候-->
+		<link rel="stylesheet" media="screen and (max-width:780px)" href="css/mobile.css">
+		<!--手机的时候-->
+		<!-- <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> -->
+		<script src="js/rem.js"></script>
+		<script src="js/idangerous.swiper2.7.6.min.js"></script>
+		<!-- <script src="js/index.js"></script>
+    <script src="js/carfly.js"></script>
+    <script src="js/shopCar.js"></script> -->
+		<script src="js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+		<script src="js/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="js/formValid.js"></script>
+		<script src="js/Area.js"></script>
+		<script src="js/form.js"></script>
+
+		<!-- <!–[if lt IE 9]>
+        <script src=”http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js”></script>
+    <![endif]–> -->
+	</head>
+	<style>
+		label {
+			/* color: #fff; */
+		}
+
+		.vipCenter-wrap {
+			/* width: 100%; */
+			height: 800px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+		}
+		input[type="file"] ::after{
+		  /* 样式代码 */
+		  
+		    /* content: "Select"; */
+		}
+	</style>
+	<body>
+		<!-- 头部 -->
+		<header class="wrap">
+			<div class="head container clearfix">
+				<div class="logo fl">
+
+				</div>
+				<div class="openNav" id="openNav">
+					<img src="images/navIcon.png" alt="">
+				</div>
+				<div class="nav-wrap fr">
+					<div class="login">
+						<a href="login.html">Login</a>
+						<a href="register.html">Register</a>
+					</div>
+					<ul class="headNav" id="nav">
+						<li class="hover"><a href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;Main Page</a></li>
+
+						<li><a href="update.html">Upload</a></li>
+						<li><a href="share1.html">Page</a></li>
+					</ul>
+				</div>
+
+				<div class="last" style="display: none;">
+					<a href="myShopCar.html">
+						<span class="shopCarIcon">
+							<!-- 上标 -->
+							<sup>3</sup>
+						</span>
+					</a>
+					<div class="shopCar-wrap" onselectstart="return false;">
+						<p class="notes">New Items</p>
+						<div class="shopCarList">
+							<div class="carList-box">
+								<dl class="shopCarListCon clearfix">
+									<input type="checkbox" class="checkbox" checked>
+									<dt class="shopImg fl">
+										<img src="images/breadIcon01.png" alt="">
+									</dt>
+									<dd class="shopDisc fl">
+										<a href="produceDetail.html" class="shopName">Item1</a>
+										<!-- 增加/减少 -->
+										<div class="count">
+											<span>Amount</span>
+											<a href="javascript:;" class="sub" onclick="IncreaseD(this)">-</a>
+											<input name="count[0]" value="1" readonly>
+											<a href="javascript:;" class="add" onclick="IncreaseD(this)">+</a>
+										</div>
+									</dd>
+									<dd class="shopPrice fl">
+										￥<span class="unitprice">15.00</span>
+										<a href="javascript:;" class="delete" onclick="DeleteBtn(this)">Delete</a>
+									</dd>
+									<!-- 产品数量*价格 -->
+									<dd class="priceTotal">
+										￥
+										<span>15.00</span>
+									</dd>
+								</dl>
+								<dl class="shopCarListCon clearfix">
+									<input type="checkbox" class="checkbox" checked>
+									<dt class="shopImg fl">
+										<img src="images/breadIcon01.png" alt="">
+									</dt>
+									<dd class="shopDisc fl">
+										<a href="produceDetail.html" class="shopName">Item2</a>
+										<!-- 增加/减少 -->
+										<div class="count">
+											<span>Amount</span>
+											<a href="javascript:;" class="sub" onclick="IncreaseD(this)">-</a>
+											<input name="count[0]" value="1" readonly>
+											<a href="javascript:;" class="add" onclick="IncreaseD(this)">+</a>
+										</div>
+									</dd>
+									<dd class="shopPrice fl">
+										￥<span class="unitprice">15.00</span>
+										<a href="javascript:;" class="delete" onclick="DeleteBtn(this)">Delete</a>
+									</dd>
+									<!-- 产品数量*价格 -->
+									<dd class="priceTotal">
+										￥
+										<span>15.00</span>
+									</dd>
+								</dl>
+								<dl class="shopCarListCon clearfix">
+									<input type="checkbox" class="checkbox" checked>
+									<dt class="shopImg fl">
+										<img src="images/breadIcon01.png" alt="">
+									</dt>
+									<dd class="shopDisc fl">
+										<a href="produceDetail.html" class="shopName">Item3</a>
+										<!-- 增加/减少 -->
+										<div class="count">
+											<span>Amount</span>
+											<a href="javascript:;" class="sub" onclick="IncreaseD(this)">-</a>
+											<input name="count[0]" value="1" readonly>
+											<a href="javascript:;" class="add" onclick="IncreaseD(this)">+</a>
+										</div>
+									</dd>
+									<dd class="shopPrice fl">
+										￥<span class="unitprice">15.00</span>
+										<a href="javascript:;" class="delete" onclick="DeleteBtn(this)">Delete</a>
+									</dd>
+									<!-- 产品数量*价格 -->
+									<dd class="priceTotal">
+										￥
+										<span>15.00</span>
+									</dd>
+								</dl>
+							</div>
+							<div class="summary clearfix">
+								<div class="sumLeft fl">
+									<p>
+										Total
+										<strong class="shopTotal">0</strong>
+										Products
+									</p>
+									<p>
+										Total$
+										<strong class="shopTprice">0.00</strong>
+									</p>
+								</div>
+								<div class="sumRight fr">
+									<a href=""></a>
+								</div>
+
+		</header>
+
+		<section class="wrap vipCenter-wrap" style="background: url(./images/1118.png);">
+
+			<div class="container clearfix" style="background-color: #fff;height: 530px;">
+				<h1 style="width: 100%;text-align: center;color: #fff;margin: -72px auto 70px;font-weight: bold;">
+					Release product</h1>
+				<div style="width: 35%; margin: 0 auto;">
+					<form id="product-form">
+
+						<label for="name">Product Name: &nbsp;</label>
+						<input style="width: 300px;" type="text" placeholder="" id="name" name="name" required><br>
+						
+						<label for="price">Product Price: &nbsp;&nbsp;&nbsp;</label>
+						<input style="width: 300px;" placeholder="" type="number" id="price" name="price" required><br>
+						
+						<label for="catalog">Product catalog:</label>
+						<!--<input placeholder="" style="width: 300px;" type="catalog" id="catalog" name="catalog" required><br>-->
+						<select id ="catalog" name="catalog">
+							<option value="">Please select</option>
+                           <option value="1">Shea Butter</option>
+                           <option value="2">Honey</option>
+                           <option value="3">Baobab fruit</option>
+                           <option value="4">Gum Arabic</option>
+						   <option value="5">Tamarind</option>
+						   <option value="6">Kinkeliba</option>
+						   <option value="7">Néré</option>
+						</select>
+					
+						<br>
+						<label for="quantity">Product quantity(kg):</label>
+						<input placeholder="" style="width: 300px;" type="number" id="quantity" name="quantity" required><br>
+					  
+						<label for="information">Product describtion:</label>
+						<textarea placeholder="" id="information" name="information" style="left: 40%; width:272px; height:100px;margin: 0px auto -91px;"
+							required></textarea><br>
+						<br>
+						<br>
+					
+						<label for="image">Product image:</label>
+						<br>
+						<input type="file" id="image"  name="image" accept="image/*" required ><br>
+						<label for="address">Address: &nbsp;</label>
+						<input style="width: 300px;" type="text" placeholder="" id="address" name="address" required><br>
+						<br>
+						<label for="userName">Seller: &nbsp;</label>
+						<input style="width: 300px;" type="text" placeholder="" id="userName" name="userName" required><br>
+						<br>
+						<label for="contact">contact: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<input style="width: 300px;" placeholder="" type="text" id="contact" name="contact" required><br>
+						<br>
+						<button type="submit" style="background: lightskyblue;width: 150px;outline: none;border: none;height: 30px;border-radius: 5px;">Upload Product</button>
+
+					</form>
+
+				</div>
+			</div>
+		</section>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		
+		<script>
+			const form = document.getElementById('product-form');
+
+			form.addEventListener('submit', event => {
+				const formData = new FormData();
+				event.preventDefault();
+				const categoryId= document.getElementById("catalog").value;
+				const name = document.getElementById("name").value;
+				const quantity = document.getElementById("quantity").value;
+				const price =  document.getElementById("price").value;
+				const address =  document.getElementById("address").value;
+				const information =  document.getElementById("information").value;
+                const userName = document.getElementById("userName").value;
+				const contact = document.getElementById("contact").value;
+				const image = document.getElementById("image").files[0];
+				formData.append('image',image);
+				formData.append('categoryId',categoryId);
+				formData.append('name',userName);
+				formData.append('quantity',quantity);
+				formData.append('price',price);
+				formData.append('address',address);
+				formData.append('information',information);
+				formData.append('userName',name);
+				formData.append('contact',contact);
+
+				//const formData = new FormData(form);
+              // console.log('name is',name);
+				axios.post('http://localhost:9090/product/', formData
+				/*
+				{"categoryId":categoryId,
+    "name":userName,
+    "quantity":quantity,
+    "price":price,
+    "address":address,
+    "information":information,
+    "userName":name,
+	"contact":contact,
+	"image":image}*/,{headers: {
+					'Content-Type': 'multipart/form-data' // 设置请求头为multipart/form-data
+				  }})
+					.then(response => {
+						console.log(response.data);
+						if(response.data.err==0){alert('Success！');window.location.href = 'share1.html';}
+						    
+						else {alert('Something is wrong with your information!');}
+					})
+					.catch(error => {
+						console.error(error);
+						alert('商品发布失败！');
+					});
+			});
+			
+
+		</script>
+
+		<footer class="wrap">
+			<div class="container clearfix">
+				<div class="footLeft">
+					<a href=""><img src="images/logo.png" alt=""></a>
+					<!-- <img src="images/ewm.png" alt="" class="ewm"> -->
+				</div>
+				<div class="footRight">
+					<p class="footLinks">
+						<a href="javascript:;">
+							Connect with us
+							<span class="ewmImg">
+								<img src="images/ewm.png" alt="">
+							</span>
+						</a>
+						<a href="index.html">Main page</a>
+					</p>
+					<p class="footLinks">
+						<a href="index.html">
+							Main page
+						</a>
+						<a href="produceDetail.html">Product information</a>
+						<a href="helpCenter.html">Help canter</a>
+					</p>
+					<p class="joinTel">
+						<img src="images/tel.png" alt="">
+					</p>
+
+
+					</p>
+
+				</div>
+			</div>
+		</footer>
+		<script src="js/shopCar.js"></script>
+
+		<!-- .main{
+        text-align: center; /*让div内部文字居中*/
+        background-color: #fff;
+        border-radius: 20px;
+        width: 300px;
+        height: 350px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    } -->
+	</body>
+</html>
