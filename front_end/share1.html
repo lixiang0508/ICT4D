@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no，minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9;IE=EmulateIE10; IE=EmulateIE11">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta name="Author" content="Calvin,stella-ning">
+		<meta http-equiv="Content-Language" content="en">
+		<title>Upload-Page</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+				<script type="text/javascript">
+					$(function() {
+					  $('input[type=file]').attr('title', 'Select file');
+					});
+				</script>
+		<link rel="shortcut icon" href="images/PClogo.png">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/public.css">
+		<link rel="stylesheet" href="js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+		<link rel="stylesheet" media="screen and (min-width:980px)" href="css/pc.css">
+		<!--大于980px的时候-->
+		<link rel="stylesheet" media="screen and (max-width:780px)" href="css/mobile.css">
+		<!--手机的时候-->
+		<!-- <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> -->
+		<script src="js/rem.js"></script>
+		<script src="js/idangerous.swiper2.7.6.min.js"></script>
+		<!-- <script src="js/index.js"></script>
+    <script src="js/carfly.js"></script>
+    <script src="js/shopCar.js"></script> -->
+		<script src="js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+		<script src="js/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="js/formValid.js"></script>
+		<script src="js/Area.js"></script>
+		<script src="js/form.js"></script>
+
+		<!-- <!–[if lt IE 9]>
+        <script src=”http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js”></script>
+    <![endif]–> -->
+	</head>
+	<style>
+		label {
+			/* color: #fff; */
+		}
+		.act{
+			  background: yellow;
+		  }
+		.vipCenter-wrap {
+			/* width: 100%; */
+			height: 800px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+		}
+		input[type="file"] ::after{
+		  /* 样式代码 */
+		  
+		    /* content: "Select"; */
+		}
+		 tr:first-child {
+		    background-color: green;
+		    color: white;
+			
+		  }
+		  tr,td{
+			  padding: 20px 30px;
+			  border: 1px solid black;
+			  text-align: center;
+		  }
+		  table{
+			  border: 1px solid black;
+			  margin: 0 auto; 
+			      color: #000;
+			      font-weight: bold;
+		  }
+	</style>
+	<body>
+		<!-- 头部 -->
+		<header class="wrap">
+			<div class="head container clearfix">
+				<div class="logo fl">
+
+				</div>
+				<div class="openNav" id="openNav">
+					<img src="images/navIcon.png" alt="">
+				</div>
+				<div class="nav-wrap fr">
+					<div class="login">
+						<a href="login.html">Login</a>
+						<a href="register.html">Register</a>
+					</div>
+					<ul class="headNav" id="nav">
+						<li class="hover"><a href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;Main Page</a></li>
+
+						<li><a href="update.html">Upload</a></li>
+						<li><a href="share1.html">Page</a></li>
+					</ul>
+				</div>
+
+				<div class="last" style="display: none;">
+					<a href="myShopCar.html">
+						<span class="shopCarIcon">
+							<!-- 上标 -->
+							<sup>3</sup>
+						</span>
+					</a>
+					<div class="shopCar-wrap" onselectstart="return false;">
+						<p class="notes">New Items</p>
+						<div class="shopCarList">
+							<div class="carList-box">
+								<dl class="shopCarListCon clearfix">
+									<input type="checkbox" class="checkbox" checked>
+									<dt class="shopImg fl">
+										<img src="images/breadIcon01.png" alt="">
+									</dt>
+									<dd class="shopDisc fl">
+										<a href="produceDetail.html" class="shopName">Item1</a>
+										<!-- 增加/减少 -->
+										<div class="count">
+											<span>Amount</span>
+											<a href="javascript:;" class="sub" onclick="IncreaseD(this)">-</a>
+											<input name="count[0]" value="1" readonly>
+											<a href="javascript:;" class="add" onclick="IncreaseD(this)">+</a>
+										</div>
+									</dd>
+									<dd class="shopPrice fl">
+										￥<span class="unitprice">15.00</span>
+										<a href="javascript:;" class="delete" onclick="DeleteBtn(this)">Delete</a>
+									</dd>
+									<!-- 产品数量*价格 -->
+									<dd class="priceTotal">
+										￥
+										<span>15.00</span>
+									</dd>
+								</dl>
+								<dl class="shopCarListCon clearfix">
+									<input type="checkbox" class="checkbox" checked>
+									<dt class="shopImg fl">
+										<img src="images/breadIcon01.png" alt="">
+									</dt>
+									<dd class="shopDisc fl">
+										<a href="produceDetail.html" class="shopName">Item2</a>
+										<!-- 增加/减少 -->
+										<div class="count">
+											<span>Amount</span>
+											<a href="javascript:;" class="sub" onclick="IncreaseD(this)">-</a>
+											<input name="count[0]" value="1" readonly>
+											<a href="javascript:;" class="add" onclick="IncreaseD(this)">+</a>
+										</div>
+									</dd>
+									<dd class="shopPrice fl">
+										￥<span class="unitprice">15.00</span>
+										<a href="javascript:;" class="delete" onclick="DeleteBtn(this)">Delete</a>
+									</dd>
+									<!-- 产品数量*价格 -->
+									<dd class="priceTotal">
+										￥
+										<span>15.00</span>
+									</dd>
+								</dl>
+								<dl class="shopCarListCon clearfix">
+									<input type="checkbox" class="checkbox" checked>
+									<dt class="shopImg fl">
+										<img src="images/breadIcon01.png" alt="">
+									</dt>
+									<dd class="shopDisc fl">
+										<a href="produceDetail.html" class="shopName">Item3</a>
+										<!-- 增加/减少 -->
+										<div class="count">
+											<span>Amount</span>
+											<a href="javascript:;" class="sub" onclick="IncreaseD(this)">-</a>
+											<input name="count[0]" value="1" readonly>
+											<a href="javascript:;" class="add" onclick="IncreaseD(this)">+</a>
+										</div>
+									</dd>
+									<dd class="shopPrice fl">
+										￥<span class="unitprice">15.00</span>
+										<a href="javascript:;" class="delete" onclick="DeleteBtn(this)">Delete</a>
+									</dd>
+									<!-- 产品数量*价格 -->
+									<dd class="priceTotal">
+										￥
+										<span>15.00</span>
+									</dd>
+								</dl>
+							</div>
+							<div class="summary clearfix">
+								<div class="sumLeft fl">
+									<p>
+										Total
+										<strong class="shopTotal">0</strong>
+										Products
+									</p>
+									<p>
+										Total$
+										<strong class="shopTprice">0.00</strong>
+									</p>
+								</div>
+								<div class="sumRight fr">
+									<a href=""></a>
+								</div>
+
+		</header>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<section class="wrap vipCenter-wrap" style="background: url(./images/Hobanner02.png);">
+
+			<div class="container clearfix" style="background-color: #fff;height: 578px;opacity: 0.7;">
+				<h1 style="width: 100%;text-align: center;color: #fff;margin: -72px auto 70px;font-weight: bold;">
+					All Products information</h1>
+				<div class="tab_box " style="height: 427px; overflow-y: scroll;">
+				  <table id="data-table">
+					<thead>
+				    <tr>
+				      <!-- 第一行 -->
+				      
+				      <td>Name</td>
+				      <td>Price</td>
+					  <td>Quantity</td>
+				      <td>Category</td>
+				      <td>Seller</td>
+					 
+				      <td>Detail</td>
+				    </tr>
+					
+				</thead>
+				<tbody>
+					<tr>
+						
+					</tr>
+				</tbody>	
+				</table>
+			</div>
+			
+			</div>
+		</section>
+
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		
+		<script>
+			$(".nav1 span").click(function(){
+				var val=$(this).index()
+				$(this).addClass('act').siblings().removeClass("act")
+			})
+			
+
+		</script>
+
+		<footer class="wrap">
+			<div class="container clearfix">
+				<div class="footLeft">
+					<a href=""><img src="images/logo.png" alt=""></a>
+					<!-- <img src="images/ewm.png" alt="" class="ewm"> -->
+				</div>
+				<div class="footRight">
+					<p class="footLinks">
+						<a href="javascript:;">
+							Connect with us
+							<span class="ewmImg">
+								<img src="images/ewm.png" alt="">
+							</span>
+						</a>
+						<a href="index.html">Main page</a>
+					</p>
+					<p class="footLinks">
+						<a href="index.html">
+							Main page
+						</a>
+						<a href="produceDetail.html">Product information</a>
+						<a href="helpCenter.html">Help canter</a>
+					</p>
+					<p class="joinTel">
+						<img src="images/tel.png" alt="">
+					</p>
+
+
+					</p>
+
+				</div>
+			</div>
+		</footer>
+		<script >
+			document.addEventListener("DOMContentLoaded", () => {
+				axios.get('http://localhost:9090/product')
+				  .then(response => {
+					data =response.data.data;
+					console.log('data is',data);
+					const table = document.getElementById("data-table");
+					const tbody = table.getElementsByTagName("tbody")[0];
+					const categorys= ['Shea Butter','Honey','Baobab Fruit','Gum Arabic','Tamarind','Kinkeliba','Nere']
+					for(let i=0;i<data.length;i++){
+						item =data[i];
+						const row = tbody.insertRow();
+						const nameCell = row.insertCell();
+						const priceCell = row.insertCell();
+						const quantityCell = row.insertCell();
+						const categoryCell = row.insertCell();
+						const sellerCell =row.insertCell();
+						
+						const detailCell =row.insertCell(); 
+						nameCell.innerHTML=item.name;
+						priceCell.innerHTML=item.price;
+						quantityCell.innerHTML = item.quantity;
+						categoryCell.innerHTML = categorys[item.categoryId];
+						sellerCell.innerHTML = item.userName;
+						detailCell.innerHTML = '<a href="details.html?id=' + item.id + '">detail</a>';
+						
+					}
+					
+				  })
+				  .catch(error => {
+					console.error(error);
+				  });
+			  });
+			  
+
+		</script>
+	</body>
+</html>
