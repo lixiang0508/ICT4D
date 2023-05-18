@@ -125,7 +125,7 @@
         <!-- call backend and store the data to the database-->
         <form id="save">
         <block>
-        <submit  next="http://localhost:9090/product" namelist="userName address quantity price categoryId information" method="post" header="Content-Type: application/json"/>
+        <submit  next="http://localhost:9090/product/vadd" namelist="userName address quantity price categoryId information" method="post" header="Content-Type: application/json"/>
         <goto next="#last"/>
         </block>
         </form>
