@@ -152,8 +152,7 @@
         <!-- call backend with data-->
         <form id="save">
         <block>
-        <!-- to be done-->
-        <data name="psave" src="" namelist="user product quantity price duration" method="get"/>
+        <submit  next="http://localhost:9090/product/vadd" namelist="userName address quantity price categoryId information" method="post" header="Content-Type: application/json"/>
         <goto next="#last"/>
         </block>
         </form>
