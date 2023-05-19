@@ -18,14 +18,13 @@ public class WebSocketServer {
 
     private static ConcurrentHashMap<Integer,Session> sessionMap = new ConcurrentHashMap<>();
 
-    //前端发送请求建立websocket链接 就会执行这个方法
+    
     @OnOpen
     public void open(@PathParam("orderId") String orderId, Session session){
 
        sessionMap.put(Integer.parseInt(orderId), session);
     }
 
-    //前端关闭页面或者主动关闭websocket链接 都会执行onclose
 
     @OnClose
     public void close(@PathParam("orderId") String orderId){
