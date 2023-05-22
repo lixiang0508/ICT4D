@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no，minimum-scale=1.0">
+	<!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9;IE=EmulateIE10; IE=EmulateIE11">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="Author" content="Calvin,stella-ning">
+	<title>NTFP‘s Store——ForeFemme</title>
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" media="screen and (min-width:980px)" href="css/pc.css"><!--大于980px的时候-->
+	<link rel="stylesheet" media="screen and (max-width:780px)" href="css/mobile.css"><!--手机的时候-->
+	<script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/rem.js"></script>
+	<script src="js/idangerous.swiper2.7.6.min.js"></script>
+	<script src="js/index.js"></script>
+    <script src="js/shopCar.js"></script>
+    <!-- <!–[if lt IE 9]>
+        <script src=”http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js”></script>
+    <![endif]–> -->
+</head>
+
+<body>
+
+    <!-- 头部 -->
+    <header class="wrap">
+        <div class="head container clearfix">
+            <!-- <div class="logo fl">
+                <a href=""><img src="images/logo.png" alt="" width="200px" height="200px"></a>
+            </div> -->
+            <div class="openNav" id="openNav">
+                <img src="images/navIcon.png" alt="">
+            </div>
+            <div class="nav-wrap fr">
+                <div class="login">
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Register</a>
+                </div>
+                <ul class="headNav" id="nav">
+                    <li class="hover"><a href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;Main Page</a ></li>
+                        <!-- <li><a href="vipCenter.html">VIPCenter</a ></li> -->
+                            <li><a href="update.html">Upload information</a ></li>
+                            <li><a href="upload.html">Information Page</a ></li>
+                </ul>
+            </div>
+            <div class="last">
+                <a href="myShopCar.html">
+                    <span class="shopCarIcon">
+                        <!-- 上标 -->
+                        <sup>3</sup>
+                    </span>
+                </a>
+                <div class="shopCar-wrap"  onselectstart="return false;">
+                    <p class="notes">New Items</p>
+                    <div class="shopCarList">
+                        <div class="carList-box">
+                            <dl class="shopCarListCon clearfix">
+                                <input type="checkbox" class="checkbox" checked>
+                                <dt class="shopImg fl">
+                                    <img src="images/breadIcon01.png" alt="">
+                                </dt>
+                                <dd class="shopDisc fl">
+                                    <a href="produceDetail.html" class="shopName">Item1</a>
+                                    <!-- 增加/减少 -->
+                                    <div class="count">
+                                        <span>Amount</span>
+                                        <a href="javascript:;" class="sub" onclick="IncreaseD(this)">-</a>
+                                        <input name="count[0]" value="1" readonly>
+                                        <a href="javascript:;" class="add" onclick="IncreaseD(this)">+</a>
+                                    </div>
+                                </dd>
+                                <dd class="shopPrice fl">
+                                    ￥<span class="unitprice">15.00</span>
+                                    <a href="javascript:;" class="delete" onclick="DeleteBtn(this)">Delete</a>
+                                </dd>
+                                <!-- 产品数量*价格 -->
+                                <dd class="priceTotal">
+                                    ￥
+                                    <span>15.00</span>
+                                </dd>
+                            </dl>
+                            <dl class="shopCarListCon clearfix">
+                                <input type="checkbox" class="checkbox" checked>
+                                <dt class="shopImg fl">
+                                    <img src="images/breadIcon01.png" alt="">
+                                </dt>
+                                <dd class="shopDisc fl">
+                                    <a href="produceDetail.html" class="shopName">Item2</a>
+                                    <!-- 增加/减少 -->
+                                    <div class="count">
+                                        <span>Amount</span>
+                                        <a href="javascript:;" class="sub" onclick="IncreaseD(this)">-</a>
+                                        <input name="count[0]" value="1" readonly>
+                                        <a href="javascript:;" class="add" onclick="IncreaseD(this)">+</a>
+                                    </div>
+                                </dd>
+                                <dd class="shopPrice fl">
+                                    ￥<span class="unitprice">15.00</span>
+                                    <a href="javascript:;" class="delete" onclick="DeleteBtn(this)">Delete</a>
+                                </dd>
+                                <!-- 产品数量*价格 -->
+                                <dd class="priceTotal">
+                                    ￥
+                                    <span>15.00</span>
+                                </dd>
+                            </dl>
+                            <dl class="shopCarListCon clearfix">
+                                <input type="checkbox" class="checkbox" checked>
+                                <dt class="shopImg fl">
+                                    <img src="images/breadIcon01.png" alt="">
+                                </dt>
+                                <dd class="shopDisc fl">
+                                    <a href="produceDetail.html" class="shopName">Item3</a>
+                                    <!-- 增加/减少 -->
+                                    <div class="count">
+                                        <span>Amount</span>
+                                        <a href="javascript:;" class="sub" onclick="IncreaseD(this)">-</a>
+                                        <input name="count[0]" value="1" readonly>
+                                        <a href="javascript:;" class="add" onclick="IncreaseD(this)">+</a>
+                                    </div>
+                                </dd>
+                                <dd class="shopPrice fl">
+                                    ￥<span class="unitprice">15.00</span>
+                                    <a href="javascript:;" class="delete" onclick="DeleteBtn(this)">Delete</a>
+                                </dd>
+                                <!-- 产品数量*价格 -->
+                                <dd class="priceTotal">
+                                    ￥
+                                    <span>15.00</span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="summary clearfix">
+                            <div class="sumLeft fl">
+                                <p>
+                                    Total
+                                    <strong class="shopTotal">0</strong>
+                                    Products
+                                </p>
+                                <p>
+                                    Total$
+                                    <strong class="shopTprice">0.00</strong>
+                                </p>
+                            </div>
+                            <div class="sumRight fr">
+                                <a href=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+    <!-- 轮播图&菜单 -->
+    <section class="wrap bannerShow">
+        <!-- 轮播图 -->
+    	<div class="swiper-container swiper-container-horizontal" id="banner">
+    	    <div class="swiper-wrapper">
+    	        <div class="swiper-slide">
+    	            <a href="#">
+    					<img src="images/Hobanner01.png" alt="">
+    				</a>
+    	        </div>
+    	        <div class="swiper-slide">
+    				<a href="#">
+    					<img src="images/Hobanner02.png" alt="">
+    				</a>
+    			</div>
+    	        <div class="swiper-slide">
+    				<a href="#">
+    					<img src="images/Hobanner01.png" alt="">
+    				</a>
+    			</div>
+    	    </div>
+
+    	    <div class="pagination">
+    	        <span class="swiper-pagination-switch swiper-pagination-switch-active"></span>
+    	        <span class="swiper-pagination-switch"></span>
+    	        <span class="swiper-pagination-switch"></span>
+    	    </div>
+    	</div>
+        <div class="container">
+            <ul class="mainNav-wrap">
+                <li class="dessert">
+                    <a href="produce.html">Fibre and Craft <i>&gt;</i></a>
+                    <div class="mainNav" >
+                        <ul class="mainNavList clearfix">
+                            <li>
+                                <a href="produceDetail.html">
+                                    <div class="listCon">
+                                        <span>
+                                            <img src="images/dessert01.png" alt="">
+                                        </span>
+                                        <span>
+                                            Nuts
+                                        </span>
+                                        <span>
+                                            Buy
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                        
+                           
+                            <li>
+                                <a href="produceDetail.html">
+                                    <div class="listCon">
+                                        <span>
+                                            <img src="images/dessert15.png" alt="">
+                                        </span>
+                                        <span>
+                                            Item2
+                                        </span>
+                                        <span>
+                                            Buy
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                </li>
+                <li class="bread">
+                    <a href="produce.html">Medicinal<i>&gt;</i></a>
+                    <div class="mainNav">
+                        <ul class="mainNavList clearfix">
+                            <li>
+                                <a href="produceDetail.html">
+                                    <div class="listCon">
+                                        <span>
+                                            <img src="images/breadIcon09.png" alt="">
+                                        </span>
+                                        <span>
+                                            Item1
+                                        </span>
+                                        <span>
+                                            Buy
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="cake" >
+                    <a href="produce.html">Aromatic<i>&gt;</i></a>
+                    <div class="mainNav" >
+                        <ul class="mainNavList clearfix">
+                          
+                            <li>
+                                <a href="produceDetail.html">
+                                    <div class="listCon">
+                                        <span>
+                                            <img src="images/cake03.png" alt="">
+                                        </span>
+                                        <span>
+                                            Item3
+                                        </span>
+                                        <span>
+                                            Buy
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                         
+                         
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 产品分类 -->
+    <section class="wrap produceCategory">
+        <div class="container">
+            <ul class="clearfix">
+                <li>
+                    <a href="produce.html">
+                        <img src="images/Hobanner03.png" alt="">
+                        <p>Fibre and Craft Products</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="produce.html">
+                        <img src="images/Hobanner04.png" alt="">
+                        <p>Medicinal Products</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="produce.html">
+                        <img src="images/Hobanner05.png" alt="">
+                        <p>Aromatic Products</p>
+                    </a>
+                </li>
+               
+            </ul>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="wrap">
+        <div class="container clearfix">
+            <div class="footLeft">
+                <a href=""><img src="images/logo.png" alt=""></a>
+                <img src="images/ewm.png" alt="" class="ewm">
+            </div>
+            <div class="footRight">
+                <p class="footLinks">
+                    <a href="javascript:;">
+                       Connection way
+                        <span class="ewmImg">
+                            <img src="images/ewm.png" alt="">
+                        </span>
+                    </a>
+                 
+                </p>
+                <p class="footLinks">
+                    <a href="index.html">
+                        Main page
+                    </a>
+                </p>
+                <p class="joinTel">
+                    <img src="images/tel.png" alt="">
+                </p>
+              
+             
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
