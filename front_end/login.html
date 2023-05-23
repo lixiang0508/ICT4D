@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no，minimum-scale=1.0">
+ <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9;IE=EmulateIE10; IE=EmulateIE11">
+ <meta name="keywords" content="">
+ <meta name="description" content="">
+ <meta name="Author" content="Calvin,stella-ning">
+ <title>NTFP‘s Store——ForeFemme</title>
+    <link rel="shortcut icon" href="images/cake01.png">
+ <link rel="stylesheet" href="css/normalize.css">
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+ <link rel="stylesheet" href="css/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/public.css">
+ <link rel="stylesheet" media="screen and (min-width:980px)" href="css/pc.css">
+ <link rel="stylesheet" media="screen and (max-width:780px)" href="css/mobile.css">
+ <script src="js/rem.js"></script>
+ <script src="js/idangerous.swiper2.7.6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <!-- head -->
+    <header class="wrap">
+        <div class="head container clearfix">
+                <a href="">< img src="images/logo.png" alt="" width="200px" height="200px"></a >
+         
+            <div class="openNav" id="openNav">
+                < img src="images/navIcon.png" alt="">
+            </div>
+            <div class="nav-wrap fr">
+                <div class="login">
+                    <a href=" ">Login</a >
+                    <a href="register.html">Register</a >
+                </div>
+                <ul class="headNav" id="nav">
+                    <li class="hover"><a href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;Main Page</a ></li>
+                        <li><a href="update.html">Upload information</a ></li>
+                        <li><a href="share1.html">Information Page</a ></li>
+                </ul>
+            </div>
+            
+        </div>
+
+
+    </header>
+    <section class="form-box">
+        <form class="form-horizontal" role="form" action="" id="FormDate">
+            <div class="top-tips">
+                <div class="title">welcome</div>
+                <p class="tips">Please Login</p >
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-3 control-label">Username：</label>
+                <div class="col-md-5 col-xs-9">
+                    <input type="text" id="username" name="username" class="form-control required ">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 col-xs-3 control-label">Password：</label>
+                <div class="col-md-5 col-xs-9">
+                    <input type="password" id="password" name="password" class="form-control required">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 col-xs-3 control-label"></label>
+                <div class="col-md-6 col-xs-9">
+                    <a class="res" href="forget.html">Forget？</a >
+                    <a class="res" href="register.html">Register New Account</a >
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="button">
+                    <button type="submit" onclick="login()">Submit</button>
+                </div>
+
+            </div>
+        </form>
+    </section>
+    <!-- footer -->
+    <script>
+        function login() {
+         const username = document.getElementById("username").value;
+         const password = document.getElementById("password").value;
+           // Make a POST request to login the user
+          axios.post("http://localhost:9090/auth/login", {
+    userName: username,
+    password: password
+   }).then(function(response) {
+    alert("Success！");
+                window.location.href = 'produceDetail.html';
+   }).catch(function(error) {
+    alert("Fail：" + error.response.data.message);
+   });
+      
+    }
+           
+       </script>
+</body>
+
+  
+</html>
