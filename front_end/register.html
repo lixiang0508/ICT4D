@@ -16,8 +16,8 @@
 	<!-- <link rel="stylesheet" href="css/idangerous.swiper.css"> -->
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/public.css">
-	<link rel="stylesheet" media="screen and (min-width:980px)" href="css/pc.css"><!--大于980px的时候-->
-	<link rel="stylesheet" media="screen and (max-width:780px)" href="css/mobile.css"><!--手机的时候-->
+	<link rel="stylesheet" media="screen and (min-width:980px)" href="css/pc.css"><!--when largeer than 980 px-->
+	<link rel="stylesheet" media="screen and (max-width:780px)" href="css/mobile.css"><!--when using mobile phone-->
 	<!-- <script src="/Users/jinling/Downloads/shop/js/jquery-2.1.1.min.js"></script>
     <script src="/Users/jinling/Downloads/shop/js/bootstrap.min.js"></script> -->
 	<script src="js/rem.js"></script>
@@ -36,7 +36,7 @@
 
 <body>
 
-    <!-- 头部 -->
+    <!-- head-->
     <header class="wrap">
         <div class="head container clearfix">
             <!-- <div class="logo fl">
@@ -80,7 +80,7 @@
             <div class="form-group">
                 <label class="col-md-4 col-xs-3 control-label">Verification Code：</label>
                 <div class="col-md-2 col-xs-5" style="padding-right:10px;">
-                    <input type="text" class="form-control required " data-valid="isNonEmpty" date-tip = "请输入验证码" data-error="请输入您的验证码">
+                    <input type="text" class="form-control required " data-valid="isNonEmpty" date-tip = "Please enter the verification code" data-error="Verification code please">
                 </div>
                 <div class="col-md-2 col-xs-4 yzm">
                     <img src="images/yanzheng.png" alt="" height="34">
@@ -89,13 +89,13 @@
             <div class="form-group">
                 <label class="col-md-4 col-xs-3 control-label">Password：</label>
                 <div class="col-md-5 col-xs-9">
-                    <input type="password" id="password" name="password" id="pwd"  class="form-control required " value=""  data-valid="isNonEmpty||isPassword" date-tip = "请输入您的密码||密码必须为6-16位字符" data-error="请输入您的密码||密码必须为6-16位字符">
+                    <input type="password" id="password" name="password" id="pwd"  class="form-control required " value=""  data-valid="isNonEmpty||isPassword" date-tip = "Please enter your password" data-error="Please enter your password">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 col-xs-3 control-label">Check Password：</label>
                 <div class="col-md-5 col-xs-9">
-                    <input type="password"  id="checkpsw" name="confirmPwd" id="confirmPwd" class="form-control required " value=""  data-valid="isNonEmpty||isEqualto" data-equalto="[name=pwd]" date-tip = "请输入您的密码||两次密码必须一致" data-error="请输入您的密码||两次密码必须一致">
+                    <input type="password"  id="checkpsw" name="confirmPwd" id="confirmPwd" class="form-control required " value=""  data-valid="isNonEmpty||isEqualto" data-equalto="[name=pwd]" date-tip = "Please enter your password" data-error="Please enter your password">
                 </div>
             </div>
 
@@ -123,13 +123,13 @@
 
     <!-- 底部 -->
     <script>
-		// 注册表单提交事件\
+		// register 
         function register() {
-			// 获取用户名和密码
+			// Get username and password
 			const username = document.getElementById("username").value;
 			const password = document.getElementById("password").value;
 
-			// 发送注册请求
+			// Send a register request
 			axios.post("http://localhost:9090/auth/register", {
 				userName: username,
 				password: password
