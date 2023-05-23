@@ -80,7 +80,7 @@
 		  }
 	</style>
 	<body>
-		<!-- 头部 -->
+		<!-- header -->
 		<header class="wrap">
 			<div class="head container clearfix">
 				<div class="logo fl">
@@ -105,7 +105,7 @@
 				<div class="last" style="display: none;">
 					<a href="myShopCar.html">
 						<span class="shopCarIcon">
-							<!-- 上标 -->
+							
 							<sup>3</sup>
 						</span>
 					</a>
@@ -119,8 +119,8 @@
 										<img src="images/breadIcon01.png" alt="">
 									</dt>
 									<dd class="shopDisc fl">
-										<a href="produceDetail.html" class="shopName">Item1</a>
-										<!-- 增加/减少 -->
+										
+										
 										<div class="count">
 											<span>Amount</span>
 											<a href="javascript:;" class="sub" onclick="IncreaseD(this)">-</a>
@@ -132,7 +132,7 @@
 										￥<span class="unitprice">15.00</span>
 										<a href="javascript:;" class="delete" onclick="DeleteBtn(this)">Delete</a>
 									</dd>
-									<!-- 产品数量*价格 -->
+								
 									<dd class="priceTotal">
 										￥
 										<span>15.00</span>
@@ -144,8 +144,8 @@
 										<img src="images/breadIcon01.png" alt="">
 									</dt>
 									<dd class="shopDisc fl">
-										<a href="produceDetail.html" class="shopName">Item2</a>
-										<!-- 增加/减少 -->
+										
+										
 										<div class="count">
 											<span>Amount</span>
 											<a href="javascript:;" class="sub" onclick="IncreaseD(this)">-</a>
@@ -157,7 +157,7 @@
 										￥<span class="unitprice">15.00</span>
 										<a href="javascript:;" class="delete" onclick="DeleteBtn(this)">Delete</a>
 									</dd>
-									<!-- 产品数量*价格 -->
+									
 									<dd class="priceTotal">
 										￥
 										<span>15.00</span>
@@ -169,8 +169,8 @@
 										<img src="images/breadIcon01.png" alt="">
 									</dt>
 									<dd class="shopDisc fl">
-										<a href="produceDetail.html" class="shopName">Item3</a>
-										<!-- 增加/减少 -->
+										
+									
 										<div class="count">
 											<span>Amount</span>
 											<a href="javascript:;" class="sub" onclick="IncreaseD(this)">-</a>
@@ -182,7 +182,7 @@
 										￥<span class="unitprice">15.00</span>
 										<a href="javascript:;" class="delete" onclick="DeleteBtn(this)">Delete</a>
 									</dd>
-									<!-- 产品数量*价格 -->
+									
 									<dd class="priceTotal">
 										￥
 										<span>15.00</span>
@@ -216,7 +216,7 @@
 				  <table id="data-table">
 					<thead>
 				    <tr>
-				      <!-- 第一行 -->
+				      <!-- the first line-->
 				      
 				      <td>Name</td>
 				      <td>Price</td>
@@ -284,6 +284,7 @@
 			</div>
 		</footer>
 		<script >
+			//send a request right after the page is loaded
 			document.addEventListener("DOMContentLoaded", () => {
 				axios.get('http://localhost:9090/product')
 				  .then(response => {
